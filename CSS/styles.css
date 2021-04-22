@@ -12,6 +12,7 @@
   --overlay-color: rgba(47, 48, 58, 0.4);
   --social-links-color: #afb1b8;
   --bg-footer-color: rgba(255, 255, 255, 0.1);
+  --backdrop-color: rgba(0, 0, 0, 0.2);
   --card-set-gap: 30px;
 }
 
@@ -68,7 +69,6 @@ img {
   top: 0;
   left: 0;
   background-color: var(--primary-white-color);
-  /* z-index: 1; */
 }
 .container.main-nav {
   display: flex;
@@ -188,6 +188,37 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: var(--backdrop-color);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.button-close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  top: 8px;
+  right: 8px;
+  background-color: var(--primary-white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
 .main-button {
   display: inline-block;
